@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Game {
     private Room currentRoom;
+    private Room wald;
 
     public Game() {
         createRooms();
@@ -12,7 +13,8 @@ public class Game {
         Room taverne = new Room("Du bist in der Taverne. Es riecht nach Bier und Rauch.");
         Room kirche = new Room("Die Kirche ist kalt und leer.");
         Room friedhof = new Room("Nebelschwaden ziehen über den Friedhof.");
-        Room wald = new Room("Der dunkle Wald wirkt bedrohlich...");
+        wald = new Room("Du stehst am Rand eines dunklen Waldes... Niemand kehrt von hier zurück.");
+
 
         // Ausgänge setzen (n, e, s, w)
         schloss.setExits(null, null, taverne, wald);
@@ -42,6 +44,12 @@ public class Game {
         } else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getDescription());
+
+            if (currentRoom == wald) {
+                System.out.println("\nEin kalter Schauer läuft dir über den Rücken...");
+                System.out.println("Du hast den Wald betreten und wirst nie wieder gesehen.\nGAME OVER");
+                System.exit(0);
+            }
         }
     }
     
