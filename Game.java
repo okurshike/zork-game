@@ -30,11 +30,11 @@ public class Game {
         wald = new Room(GameTexts.get("room.wald.description"));
 
         // Ausgänge setzen (n, e, s, w)
-        schloss.setExits(null, null, taverne, wald);
-        taverne.setExits(schloss, null, null, kirche);
-        kirche.setExits(wald, taverne, null, friedhof);
-        friedhof.setExits(wald, kirche, null, null);
-        wald.setExits(null, null, null, null);
+        schloss.setExits(null, null, taverne, wald);  // Schloss hat Taverne im Süden und Wald im Westen
+        taverne.setExits(schloss, null, null, kirche); // Taverne hat Schloss im Norden und Kirche im Westen
+        kirche.setExits(wald, taverne, null, friedhof); // Kirche hat Wald im Norden, Taverne im Osten und Friedhof im Westen
+        friedhof.setExits(wald, kirche, null, null);    // Friedhof hat Wald im Norden und Kirche im Osten
+        wald.setExits(null, schloss, kirche, friedhof); // Wald hat Schloss im Osten, Kirche im Süden und Friedhof im Westen
 
         currentRoom = schloss;
     }
@@ -85,8 +85,46 @@ public class Game {
                 System.out.println(GameTexts.get("event.kirche.gewonnen"));
                 System.exit(0);
             }
-
         }
+    }
+
+    private void showMap() {
+        System.out.println("╔═════════════════════════════════╗     ╔═════════╗");
+        System.out.println("║                                 ║     ║         ║");
+        
+        if (currentRoom == wald) {
+            System.out.println("║         WALD [X]            ║─────║ SCHLOSS ║");
+        } else if (currentRoom == schloss) {
+            System.out.println("║               WALD              ║─────║ SCHLOSS ║");
+            System.out.println("║                                 ║     ║   [X]   ║");
+        } else {
+            System.out.println("║               WALD              ║─────║ SCHLOSS ║");
+        }
+        
+        System.out.println("║                                 ║     ║         ║");
+        System.out.println("╚══════╦═══════════════════╦══════╝     ╚════╦════╝");
+        System.out.println("       │                   │                 │");
+        System.out.println("       │                   │                 │");
+        System.out.println("╔══════╩══════╗     ╔══════╩══════╗     ╔════╩════╗");
+        System.out.println("║             ║     ║             ║     ║         ║");
+        
+        if (currentRoom == friedhof) {
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
+            System.out.println("║     [X]     ║     ║             ║     ║         ║");
+        } else if (currentRoom == kirche) {
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
+            System.out.println("║             ║     ║     [X]     ║     ║         ║");
+        } else if (currentRoom == taverne) {
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
+            System.out.println("║             ║     ║             ║     ║   [X]   ║");
+        } else {
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
+            System.out.println("║             ║     ║             ║     ║         ║");
+        }
+        
+        System.out.println("║             ║     ║             ║     ║         ║");
+        System.out.println("╚═════════════╝     ╚═════════════╝     ╚═════════╝");
+        System.out.println("\nDein aktueller Standort ist mit [X] markiert.");
     }
 
     public void play() {
@@ -109,6 +147,8 @@ public class Game {
                 goRoom(direction, scanner);
             } else if (input.equals("help")) {
                 System.out.println(GameTexts.get("game.command.help"));
+            } else if (input.equals("map")) {
+                showMap();
             } else {
                 System.out.println(GameTexts.get("game.command.unknown"));
             }
