@@ -1,3 +1,4 @@
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Game {
@@ -13,12 +14,20 @@ public class Game {
         createRooms();
     }
 
+    public class GameTexts {
+        private static final ResourceBundle texts = ResourceBundle.getBundle("dialog");
+
+        public static String get(String key) {
+            return texts.getString(key);
+        }
+    }
+
     private void createRooms() {
-        schloss = new Room("Du stehst vor dem alten Schloss.");
-        taverne = new Room("Du bist in der Taverne. Es riecht nach Bier und Rauch.");
-        kirche = new Room("Die Kirche ist kalt und leer.");
-        friedhof = new Room("Nebelschwaden ziehen über den Friedhof.");
-        wald = new Room("Du stehst am Rand eines dunklen Waldes... Niemand kehrt von hier zurück.");
+        schloss = new Room(GameTexts.get("room.schloss.description"));
+        taverne = new Room(GameTexts.get("room.taverne.description"));
+        kirche = new Room(GameTexts.get("room.kirche.description"));
+        friedhof = new Room(GameTexts.get("room.friedhof.description"));
+        wald = new Room(GameTexts.get("room.wald.description"));
 
         // Ausgänge setzen (n, e, s, w)
         schloss.setExits(null, null, taverne, wald);
@@ -47,37 +56,33 @@ public class Game {
                 nextRoom = currentRoom.getWest();
                 break;
             default:
-                System.out.println("Unbekannte Richtung.");
+                System.out.println(GameTexts.get("room.direction.unknown"));
                 return;
         }
 
         if (nextRoom == null) {
-            System.out.println("Dort kannst du nicht hingehen.");
+            System.out.println(GameTexts.get("game.direction.invalid"));
         } else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getDescription());
 
             if (currentRoom == wald) {
-                System.out.println("\nEin kalter Schauer läuft dir über den Rücken...");
-                System.out.println("Du hast den Wald betreten und wirst nie wieder gesehen.\nGAME OVER");
+                System.out.println(GameTexts.get("event.wald.gameover"));
                 System.exit(0);
             } else if (currentRoom == friedhof && objectTaken == false) {
-                System.out.println(
-                        "\nDu laeufst um das Friedhof herum. Du spürst die tote Seelen schauen dich zu von einen Gräben");
-                System.out.println(
-                        "\nUnd doch findest du ein uralter halbstreckender aus einem alten Graben Objekt, verstehst aber nicht was es genau ist. Mitnehmen? (ja/nein)");
+                System.out.println(GameTexts.get("event.friedhof.fund"));
+                System.out.println(GameTexts.get("event.friedhof.frage"));
                 System.out.print("> ");
                 String antwort = scanner.nextLine().trim().toLowerCase();
 
                 if (antwort.equals("ja")) {
-                    System.out.println("Du nimmst es mit. Was machst du jetzt?");
+                    System.out.println(GameTexts.get("event.friedhof.mitgenommen"));
                     objectTaken = true;
                 } else {
-                    System.out.println("Du lässt das Objekt liegen. Was ist, wenn es verflucht ist?");
+                    System.out.println(GameTexts.get("event.friedhof.gelassen"));
                 }
             } else if (currentRoom == kirche && objectTaken == true) {
-                System.out.println(
-                        "Du bist wieder in der Kirche. Jedoch felt es dir erst jetzt auf, dass in dem weitesten, dünkleren Ecke des Raums steht es ein Opferaltar. \nDu entscheidest, den Objekt von Friedhof dadrauf zu stellen. Und - du siehst den hellen zum Himmel ausstralenden Licht. \nEs ist ein guter Zeichen. \nTO BE CONTINUED");
+                System.out.println(GameTexts.get("event.kirche.gewonnen"));
                 System.exit(0);
             }
 
@@ -88,7 +93,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         boolean playing = true;
 
-        System.out.println("Willkommen im Renaissance-Adventure!");
+        System.out.println(GameTexts.get("game.welcome"));
         System.out.println(currentRoom.getDescription());
 
         while (playing) {
@@ -103,13 +108,13 @@ public class Game {
                 String direction = input.substring(3);
                 goRoom(direction, scanner);
             } else if (input.equals("help")) {
-                System.out.println("Verfügbare Befehle: go [richtung], look, help, quit");
+                System.out.println(GameTexts.get("game.command.help"));
             } else {
-                System.out.println("Ich kenne diesen Befehl nicht.");
+                System.out.println(GameTexts.get("game.command.unknown"));
             }
         }
 
-        System.out.println("Danke fürs Spielen!");
+        System.out.println(GameTexts.get("game.command.quit"));
         scanner.close();
     }
 }
