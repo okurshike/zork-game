@@ -9,6 +9,7 @@ Ein textbasiertes Adventure-Spiel, in dem du verschiedene Räume erkunden kannst
   - `look` - Beschreibe den aktuellen Raum.
   - `help` - Zeige verfügbare Befehle.
   - `quit` - Beende das Spiel.
+  - `map`  - Die Karte anzeigen. 
 
 - **Ziel:**
   - Erkunde die Räume, finde das versteckte Objekt und löse das Rätsel in der Kirche.
