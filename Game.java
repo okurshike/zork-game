@@ -89,44 +89,50 @@ public class Game {
     }
 
     private void showMap() {
-        System.out.println("╔═════════════════════════════════╗     ╔═════════╗");
-        System.out.println("║                                 ║     ║         ║");
+        System.out.println("╔═════════════════════════════════╗     ╔═════════════════════════╗");
+        System.out.println("║                                 ║     ║  [][][]  /\"\"\\   [][][]  ║");
+        System.out.println("║                                 ║     ║    |::| /____\\  |::|    ║");
         
         if (currentRoom == wald) {
-            System.out.println("║         WALD [X]            ║─────║ SCHLOSS ║");
+            System.out.println("║         WALD [X]                ║─────║   |[]|_|::::|_|[]|    ║");
+            System.out.println("║                                 ║     ║   |::::::__::::::|    ║");
         } else if (currentRoom == schloss) {
-            System.out.println("║               WALD              ║─────║ SCHLOSS ║");
-            System.out.println("║                                 ║     ║   [X]   ║");
+            System.out.println("║               WALD              ║─────║    |:::::/| |\\:::::|    ║");
+            System.out.println("║                                 ║     ║    |:#:::|| ||::#::|    ║");
+            System.out.println("║                                 ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║                                 ║     ║      SCHLOSS    [X]     ║");
         } else {
-            System.out.println("║               WALD              ║─────║ SCHLOSS ║");
+            System.out.println("║               WALD              ║─────║    |:::::/| |\\:::::|    ║");
+            System.out.println("║                                 ║     ║    |:#:::|| ||::#::|    ║");
+            System.out.println("║                                 ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║                                 ║     ║         SCHLOSS         ║");
         }
         
-        System.out.println("║                                 ║     ║         ║");
-        System.out.println("╚══════╦═══════════════════╦══════╝     ╚════╦════╝");
-        System.out.println("       │                   │                 │");
-        System.out.println("       │                   │                 │");
-        System.out.println("╔══════╩══════╗     ╔══════╩══════╗     ╔════╩════╗");
-        System.out.println("║             ║     ║             ║     ║         ║");
+        System.out.println("║                                 ║     ║                         ║");
+        System.out.println("╚══════╦═══════════════════╦══════╝     ╚════════╦════════════════╝");
+        System.out.println("       │                   │                     │");
+        System.out.println("       │                   │                     │");
+        System.out.println("╔══════╩══════╗     ╔══════╩══════╗     ╔════════╩═══════╗");
+        System.out.println("║             ║     ║             ║     ║                ║");
         
         if (currentRoom == friedhof) {
-            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
-            System.out.println("║     [X]     ║     ║             ║     ║         ║");
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║    TAVERNE     ║");
+            System.out.println("║     [X]     ║     ║             ║     ║                ║");
         } else if (currentRoom == kirche) {
-            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
-            System.out.println("║             ║     ║     [X]     ║     ║         ║");
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║    TAVERNE     ║");
+            System.out.println("║             ║     ║     [X]     ║     ║                ║");
         } else if (currentRoom == taverne) {
-            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
-            System.out.println("║             ║     ║             ║     ║   [X]   ║");
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║    TAVERNE     ║");
+            System.out.println("║             ║     ║             ║     ║      [X]       ║");
         } else {
-            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║ TAVERNE ║");
-            System.out.println("║             ║     ║             ║     ║         ║");
+            System.out.println("║  FRIEDHOF   ║─────║   KIRCHE    ║─────║    TAVERNE     ║");
+            System.out.println("║             ║     ║             ║     ║                ║");
         }
         
-        System.out.println("║             ║     ║             ║     ║         ║");
-        System.out.println("╚═════════════╝     ╚═════════════╝     ╚═════════╝");
+        System.out.println("║             ║     ║             ║     ║                ║");
+        System.out.println("╚═════════════╝     ╚═════════════╝     ╚════════════════╝");
         System.out.println("\nDein aktueller Standort ist mit [X] markiert.");
     }
-
     public void play() {
         Scanner scanner = new Scanner(System.in);
         boolean playing = true;
@@ -158,3 +164,28 @@ public class Game {
         scanner.close();
     }
 }
+
+//
+//   [][][] /""\ [][][]
+//    |::| /____\ |::|
+//    |[]|_|::::|_|[]|
+//    |::::::__::::::|
+//    |:::::/||\:::::|
+//    |:#:::||||::#::|
+//   @@@@@@@@@@@@@@@@@@@
+//  @@@@@@@@@@@@@@@@@@@@@
+//
+
+
+//         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⡠⠔⠒.
+//         ⠀⢀⠔⠚⠙⠒⠒⠒⠤⠀⠀ ⠀⠀⢀⣠⣴⣦⠀⠈⠘⣦
+//         ⣸⠁⠀⠀⠀⠀⠀⠀⢰⠃:⣀ ⣀⡠⣞⣉⡀⡜⡟⣷⢟⠟
+//         ⣗⠀⠀⢀⣀⣀⣀⣀⣀⣓⡞ ⢽⡚⣑⣛⡇⢸⣷⠓⢻⣟⡿
+//         ⠈⠒⠊⠻⣷⣿⣚⡽⠃⠉⠀⠀ ⠙⠿⣌⠳⣼⡇⠀⣸⣟⡑
+//         ⠀⡀⠀⠀.⣿⠉⠀⠀⠀⠀⠀⠀ ⠀⠈⢧⣸⡇⢐⡟⠀⠙
+//               ⣿.⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠙⣟⠋
+//              ⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀ ⠀   ⣿⠀
+//         ⠻⢷⠾⠦⠤⠬⣅⣹⣿⣖⣶⣲⣈⡥⠤⠶⡖⠛::⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+
+
