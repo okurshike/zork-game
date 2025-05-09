@@ -91,79 +91,79 @@ public class Game {
     }
 
     private void showMap() {
-        System.out.println("╔═════════════════════════════════╗     ╔═════════════════════════╗");
-        System.out.println("║           _  ~~~  _             ║     ║  [][][]  /\"\"\\   [][][]  ║");
-        System.out.println("║          /~~     ~~\\            ║     ║    |::| /____\\  |::|    ║");
+        System.out.println("╔══════════════════════════════════════╗     ╔═════════════════════════╗");
+        System.out.println("║           _  ~~~  _                  ║     ║  [][][]  /\"\"\\   [][][]  ║");
+        System.out.println("║          /~~     ~~\\                 ║     ║    |::| /____\\  |::|    ║");
 
         if (currentRoom == wald) {
-            System.out.println("║        /~~         ~~\\     ║─────║   |[]|_|::::|_|[]|    ║");
-            System.out.println("║           {           }           ║     ║   |::::::__::::::|    ║");
-            System.out.println("║         \\  _-     -_  /     ║─────║    |:::::/| |\\:::::|    ║");
-            System.out.println("║             ~  \\\\ //  ~    ║     ║    |:#:::|| ||::#::|    ║");
-            System.out.println("║       _- -   | | _- _         ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║          _ -  | |   -_          ║     ║         SCHLOSS         ║");
-            System.out.println("║               // \\\\                      ║     ║                         ║");
+            System.out.println("║        /~~         ~~\\         ║─────║   |[]|_|::::|_|[]|    ║");
+            System.out.println("║           {           }               ║     ║   |::::::__::::::|    ║");
+            System.out.println("║         \\  _-     -_  /         ║─────║    |:::::/| |\\:::::|    ║");
+            System.out.println("║             ~  \\\\ //  ~        ║     ║    |:#:::|| ||::#::|    ║");
+            System.out.println("║       _- -   | | _- _             ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║          _ -  | |   -_              ║     ║         SCHLOSS         ║");
+            System.out.println("║               // \\\\                          ║     ║                         ║");
 
         } else if (currentRoom == schloss) {
-            System.out.println("║         {           }           ║─────║    |:::::/| |\\:::::|    ║");
-            System.out.println("║          \\ _-   -_ /            ║     ║    |:#:::|| ||::#::|    ║");
-            System.out.println("║          ~  \\\\ //  ~            ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║        _- -  | | _- _           ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║         _ -  | |   -_           ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║             // \\\\               ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║             WALD                ║     ║      SCHLOSS    [X]     ║");
+            System.out.println("║         {           }                ║─────║    |:::::/| |\\:::::|    ║");
+            System.out.println("║          \\ _-   -_ /                 ║     ║    |:#:::|| ||::#::|    ║");
+            System.out.println("║          ~  \\\\ //  ~                 ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║        _- -  | | _- _                ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║         _ -  | |   -_                ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║             // \\\\                    ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║             WALD                     ║     ║      SCHLOSS    [X]     ║");
 
         } else {
-            System.out.println("║         {           }           ║─────║    |:::::/| |\\:::::|    ║");
-            System.out.println("║          \\ _-   -_ /            ║     ║    |:#:::|| ||::#::|    ║");
-            System.out.println("║          ~  \\\\ //  ~            ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║        _- -  | | _- _           ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║         _ -  | |   -_           ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║             // \\\\               ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
-            System.out.println("║              WALD               ║     ║         SCHLOSS         ║");
+            System.out.println("║         {           }                ║─────║    |:::::/| |\\:::::|    ║");
+            System.out.println("║          \\ _-   -_ /                 ║     ║    |:#:::|| ||::#::|    ║");
+            System.out.println("║          ~  \\\\ //  ~                 ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║        _- -  | | _- _                ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║         _ -  | |   -_                ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║             // \\\\                    ║     ║  @@@@@@@@@@@@@@@@@@@@@  ║");
+            System.out.println("║              WALD                    ║     ║         SCHLOSS         ║");
 
         }
 
-        System.out.println("╚══════╦═══════════════════╦══════╝     ╚══════════════════╦══════╝");
-        System.out.println("       │                   │                               │");
-        System.out.println("       │                   │                               │");
-        System.out.println("╔══════╩══════╗     ╔══════╩═══════════════╗        ╔══════╩═════╗");
-        System.out.println("║             ║     ║              +       ║        ║  .~~~~.    ║");
+        System.out.println("╚══════╦════════════════════════╦══════╝     ╚══════════════════╦══════╝");
+        System.out.println("       │                        │                               │");
+        System.out.println("       │                        │                               │");
+        System.out.println("╔══════╩═══════════╗     ╔══════╩═══════════════╗        ╔══════╩═════╗");
+        System.out.println("║        ,-=-.     ║     ║              +       ║        ║  .~~~~.    ║");
 
         if (currentRoom == friedhof) {
-            System.out.println("║             ║     ║            /_\\       ║        ║  i====i_   ║");
-            System.out.println("║             ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
-            System.out.println("║             ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
-            System.out.println("║             ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
-            System.out.println("║             ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
-            System.out.println("║FRIEDHOF [X] ║     ║        KIRCHE        ║        ║            ║");
+            System.out.println("║       /  +  \\    ║     ║            /_\\       ║        ║  i====i_   ║");
+            System.out.println("║       | ~~~ |    ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
+            System.out.println("║       |R.I.P|    ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
+            System.out.println("║  \\vV,,|_____|V,  ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
+            System.out.println("║     FRIEDHOF     ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
+            System.out.println("║       [X]        ║     ║        KIRCHE        ║        ║            ║");
 
         } else if (currentRoom == kirche) {   
-            System.out.println("║             ║     ║            /_\\       ║        ║  i====i_   ║");
-            System.out.println("║             ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
-            System.out.println("║             ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
-            System.out.println("║             ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
-            System.out.println("║             ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
-            System.out.println("║FRIEDHOF     ║     ║      KIRCHE [X]      ║        ║            ║");
+            System.out.println("║       /  +  \\    ║     ║            /_\\       ║        ║  i====i_   ║");
+            System.out.println("║       | ~~~ |    ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
+            System.out.println("║       |R.I.P|    ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
+            System.out.println("║  \\vV,,|_____|V,  ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
+            System.out.println("║     FRIEDHOF     ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
+            System.out.println("║                  ║     ║        KIRCHE [X]    ║        ║            ║");
 
         } else if (currentRoom == taverne) {
-            System.out.println("║             ║     ║            /_\\       ║        ║  i====i_   ║");
-            System.out.println("║             ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
-            System.out.println("║             ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
-            System.out.println("║             ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
-            System.out.println("║             ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
-            System.out.println("║FRIEDHOF     ║     ║        KIRCHE        ║        ║    [X]     ║");
+            System.out.println("║       /  +  \\    ║     ║            /_\\       ║        ║  i====i_   ║");
+            System.out.println("║       | ~~~ |    ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
+            System.out.println("║       |R.I.P|    ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
+            System.out.println("║  \\vV,,|_____|V,  ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
+            System.out.println("║     FRIEDHOF     ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
+            System.out.println("║                  ║     ║        KIRCHE        ║        ║    [X]     ║");
 
         } else {
-            System.out.println("║             ║     ║            /_\\       ║        ║  i====i_   ║");
-            System.out.println("║             ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
-            System.out.println("║             ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
-            System.out.println("║             ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
-            System.out.println("║             ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
-            System.out.println("║FRIEDHOF     ║     ║        KIRCHE        ║        ║            ║");
+            System.out.println("║       /  +  \\    ║     ║            /_\\       ║        ║  i====i_   ║");
+            System.out.println("║       | ~~~ |    ║     ║  ,%%%______|O|       ║        ║  |cccc|_)  ║");
+            System.out.println("║       |R.I.P|    ║     ║  %%%/_________\\      ║        ║  |cccc|    ║");
+            System.out.println("║  \\vV,,|_____|V,  ║     ║  `%%| /\\[][][]|%     ║        ║  `-==-'    ║");
+            System.out.println("║     FRIEDHOF     ║     ║ ___||_||______|%&,__ ║        ║  TAVERNE   ║");
+            System.out.println("║                  ║     ║        KIRCHE        ║        ║            ║");
         }
 
-        System.out.println("╚═════════════╝     ╚══════════════════════╝        ╚════════════╝");
+        System.out.println("╚══════════════════╝     ╚══════════════════════╝        ╚════════════╝");
         System.out.println("\nDein aktueller Standort ist mit [X] markiert.");
     }
 
