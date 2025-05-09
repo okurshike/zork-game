@@ -74,9 +74,22 @@ public class Game {
             } else if (currentRoom == friedhof && objectTaken == false) {
                 System.out.println(GameTexts.get("event.friedhof.fund"));
                 System.out.println(GameTexts.get("event.friedhof.frage"));
-                System.out.print("> ");
-                String antwort = scanner.nextLine().trim().toLowerCase();
-
+                
+                boolean validAnswer = false;
+                String antwort = "";
+                
+                while (!validAnswer) {
+                    System.out.print("> ");
+                    antwort = scanner.nextLine().trim().toLowerCase();
+                    
+                    if (antwort.equals("ja") || antwort.equals("nein")) {
+                        validAnswer = true;
+                    } else {
+                        System.out.println(GameTexts.get("event.friedhof.unkonwn"));
+                        System.out.println(GameTexts.get("event.friedhof.frage"));
+                    }
+                }
+                
                 if (antwort.equals("ja")) {
                     System.out.println(GameTexts.get("event.friedhof.mitgenommen"));
                     objectTaken = true;
