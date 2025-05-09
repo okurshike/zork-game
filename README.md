@@ -7,6 +7,7 @@ Ein textbasiertes Adventure-Spiel, in dem du verschiedene Räume erkunden kannst
 - **Befehle:**
   - `go [richtung]` - Bewege dich in eine Richtung (north, east, south, west).
   - `look` - Beschreibe den aktuellen Raum.
+  - `map`  - Zeige die Karte und wo man sich befindet.
   - `help` - Zeige verfügbare Befehle.
   - `quit` - Beende das Spiel.
   - `map`  - Die Karte anzeigen. 
